@@ -32,12 +32,12 @@ import javax.swing.table.TableRowSorter;
  * Main window class.
  * @author Tim Sullivan <tsullivan@timatooth.com>
  */
-public class MainFrame extends javax.swing.JFrame {
+public class Cashdrain extends javax.swing.JFrame {
 
     private TableRowSorter tblSorter;
     private DefaultTableModel dataModel;
 
-    public MainFrame() {
+    public Cashdrain() {
         initComponents();
         setupTable();
         setupDnd();
@@ -115,7 +115,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         lblBank.setText("Bank");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "ANZ", "ASB", "BNZ", "Westpac" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "ANZ" }));
 
         lblBalance.setText("Balance");
 
@@ -252,13 +252,13 @@ public class MainFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Cashdrain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Cashdrain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Cashdrain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Cashdrain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         */
 
@@ -267,7 +267,7 @@ public class MainFrame extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MainFrame().setVisible(true);
+                new Cashdrain().setVisible(true);
             }
         });
     }
@@ -319,7 +319,7 @@ public class MainFrame extends javax.swing.JFrame {
                 try {
                     fileList = (List) t.getTransferData(DataFlavor.javaFileListFlavor);
                 } catch (UnsupportedFlavorException | IOException ex) {
-                    Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Cashdrain.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 
                 File file = (File) fileList.get(0);
@@ -389,7 +389,7 @@ public class MainFrame extends javax.swing.JFrame {
              try {
                  date = new SimpleDateFormat("dd/M/yyyy", Locale.ENGLISH).parse(row.get(6));
              } catch (ParseException ex) {
-                Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Cashdrain.class.getName()).log(Level.SEVERE, null, ex);
                 date = new Date();
             }
             Object[] data = new Object[]{
